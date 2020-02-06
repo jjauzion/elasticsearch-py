@@ -26,7 +26,7 @@ in several formats. The most common one is the same  as returned by
 
     {
         '_index': 'index-name',
-        '_type': 'document',
+        '_type': '_doc',
         '_id': 42,
         '_routing': 5,
         'pipeline': 'my-ingest-pipeline',
@@ -57,13 +57,13 @@ action (``_op_type`` defaults to ``index``):
     {
         '_op_type': 'delete',
         '_index': 'index-name',
-        '_type': 'document',
+        '_type': '_doc',
         '_id': 42,
     }
     {
         '_op_type': 'update',
         '_index': 'index-name',
-        '_type': 'document',
+        '_type': '_doc',
         '_id': 42,
         'doc': {'question': 'The life, universe and everything.'}
     }
@@ -83,7 +83,7 @@ document is like ``{"word": "<myword>"}``.
         for word in mywords:
             yield {
                 "_index": "mywords",
-                "_type": "document",
+                "_type": "_doc",
                 "doc": {"word": word},
             }
 
